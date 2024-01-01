@@ -20,13 +20,13 @@ const Wrapper = styled.main`
   height: 100vh;
   .main {
     display: flex;
-    height: calc(100% - 4.7rem);
+    height: 95%;
   }
   .hide {
     transform: translateX(-100%);
+    display: none;
     button,
     .userInfo {
-      transition: 0.3s all ease;
       display: none;
     }
   }

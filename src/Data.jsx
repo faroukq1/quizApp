@@ -41,20 +41,21 @@ export const sideBarContent = [
 export const cardList = [
   {
     id: nanoid(),
-    heading:
-      'Must know algorithm and data structure with sorting algorithm and finaly how to calculate complexity and space',
+
+    heading: 'Algorithm',
+    desc: 'Must know algorithm and data structure with sorting algorithm and finaly how to calculate complexity and space',
     img: img1,
   },
   {
     id: nanoid(),
-    heading:
-      'Must know how to program with assembly language and how modern language conveted to assembly then to machine code',
+    heading: 'Assembly',
+    desc: 'Must know how to program with assembly language and how modern language conveted to assembly then to machine code',
     img: img2,
   },
   {
     id: nanoid(),
-    heading:
-      'Must know Object-Oriented Programming paradigm and the different between oop and function & procedural programming',
+    heading: 'Object-Oriented',
+    desc: 'Must know Object-Oriented Programming paradigm and the different between oop and function & procedural programming',
     img: img3,
   },
 ];

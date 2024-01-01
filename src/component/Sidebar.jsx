@@ -8,7 +8,7 @@ const Sidebar = () => {
   const { isSideBarOpen, currentUser } = useGlobalContext();
   return (
     <Wrapper className={isSideBarOpen ? '' : 'hide'}>
-      <div>
+      <div className="show-border">
         <div className="userInfo">
           <img src={avatar} alt="avatar" />
           <p>
@@ -40,12 +40,15 @@ const Wrapper = styled.aside`
   transition: all ease 0.5s;
   background-color: #1c1b25;
   width: 18%;
-  height: 101%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
   padding: 2rem 0;
+  .show-border {
+    border-top: 1px solid #a2a2a753;
+    border-bottom: 1px solid #a2a2a753;
+  }
   button {
     background-color: transparent;
     outline: none;
@@ -56,6 +59,7 @@ const Wrapper = styled.aside`
     padding: 1rem 0;
     cursor: pointer;
     color: #a2a2a7;
+    width: 100%;
     svg {
       font-size: 20px;
       margin-left: 1.5rem;

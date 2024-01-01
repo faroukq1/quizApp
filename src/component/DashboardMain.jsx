@@ -10,9 +10,9 @@ const DashboardMain = () => {
 };
 
 const Wrapper = styled.article`
-  background-color: grey;
   height: 100vh;
   width: 100%;
+  background-color: #1c1b25;
 `;
 
 export default DashboardMain;

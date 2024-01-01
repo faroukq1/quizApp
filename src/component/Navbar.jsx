@@ -23,15 +23,15 @@ const Navbar = () => {
 
 const Wrapper = styled.nav`
   width: 100%;
-  padding: 1rem 4rem;
+  padding: 0.5rem 2rem;
   color: white;
-  background-color: #3d3d49;
+  background-color: #1c1b25;
   display: flex;
   align-items: center;
   justify-content: space-between;
   img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
   }
   svg {
