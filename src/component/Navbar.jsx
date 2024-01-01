@@ -25,7 +25,7 @@ const Wrapper = styled.nav`
   width: 100%;
   padding: 1rem 4rem;
   color: white;
-  background-color: #0095ff;
+  background-color: #3d3d49;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -35,6 +35,7 @@ const Signup = ({ setCreateAcount }) => {
     toast.success(`welcom ${firstName} , have a good luck`);
     setStudentList([...studentList, studentInfos]);
     setInscriptionCompleted(true);
+    setCurrentUser(firstName);
   };
   if (inscriptionCompleted) {
     return (

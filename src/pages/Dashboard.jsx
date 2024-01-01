@@ -25,9 +25,9 @@ const Wrapper = styled.main`
   }
   .hide {
     transform: translateX(-100%);
-    visibility: hidden;
-    width: 0;
-    button {
+    button,
+    .userInfo {
+      transition: 0.3s all ease;
       display: none;
     }
   }

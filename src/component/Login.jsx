@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useStudentContext } from '../context/StudentContext';
 import { toast } from 'react-toastify';
+import { useGlobalContext } from '../context/GlobalContext';
 
 const Login = ({ setCreateAcount }) => {
   const [loginInfo, setLoginInfo] = useState({ firstName: '', password: '' });
   const [active, setactive] = useState(false);
   const { studentList } = useStudentContext();
+  const { setCurrentUser } = useGlobalContext();
   const checkExistStudent = () => {
     const { firstName, password } = loginInfo;
     if (firstName.length === 0) {
@@ -21,6 +23,7 @@ const Login = ({ setCreateAcount }) => {
     const user = studentList.filter(
       (item) => item.firstName === firstName && item.password === password
     );
+    setCurrentUser(firstName);
     return user.length > 0;
   };
   return (

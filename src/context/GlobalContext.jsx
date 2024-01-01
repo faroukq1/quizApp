@@ -6,6 +6,7 @@ const GlobalContext = createContext();
 export const GlobalContextProvider = ({ children }) => {
   const [createAccount, setCreateAcount] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState('farouk');
   return (
     <GlobalContext.Provider
       value={{
@@ -13,6 +14,8 @@ export const GlobalContextProvider = ({ children }) => {
         setCreateAcount,
         isSideBarOpen,
         setIsSideBarOpen,
+        currentUser,
+        setCurrentUser,
       }}
     >
       {children}
