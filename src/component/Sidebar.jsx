@@ -44,9 +44,9 @@ const Wrapper = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  padding: 2rem 0;
+  padding: 1rem 0;
+  border-right: 1px solid #a2a2a753;
   .show-border {
-    border-top: 1px solid #a2a2a753;
     border-bottom: 1px solid #a2a2a753;
   }
   button {
@@ -73,11 +73,13 @@ const Wrapper = styled.aside`
   a {
     text-decoration: none;
     color: #c02d006e;
+    margin-bottom: 1rem;
   }
   .userInfo {
     display: flex;
     align-items: center;
     gap: 1rem;
+    border-bottom: 1px solid #a2a2a753;
     img {
       margin: 1rem 0 1rem 1.5rem;
       width: 40px;

@@ -29,6 +29,7 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #a2a2a753;
   img {
     width: 30px;
     height: 30px;
