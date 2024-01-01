@@ -64,9 +64,7 @@ const Login = ({ setCreateAcount }) => {
           onClick={() => {
             if (checkExistStudent()) {
               toast('Welcom to the test platform');
-              setTimeout(() => {
-                setactive(true);
-              }, 2000);
+              setactive(true);
             }
           }}
         >

@@ -18,7 +18,6 @@ const Dashboard = () => {
 const Wrapper = styled.main`
   position: relative;
   height: 100vh;
-  background-color: black;
   .main {
     display: flex;
     height: calc(100% - 4.7rem);

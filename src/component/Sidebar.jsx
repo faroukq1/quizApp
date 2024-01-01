@@ -39,9 +39,8 @@ const Sidebar = () => {
 const Wrapper = styled.aside`
   transition: all ease 0.5s;
   background-color: #1c1b25;
-  width: 15%;
-  height: 100%;
-  border-bottom-right-radius: 20px;
+  width: 18%;
+  height: 101%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -9,6 +9,7 @@ const Signup = ({ setCreateAcount }) => {
   const { studentList, setStudentList, studentInfos, setStudentInfos } =
     useStudentContext();
   const [inscriptionCompleted, setInscriptionCompleted] = useState(false);
+  const { setCurrentUser } = useGlobalContext();
   const saveStudent = () => {
     const { firstName, lastName, email, numberOfInscription, password } =
       studentInfos;
