@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Card = ({ img, heading, desc }) => {
@@ -7,7 +8,9 @@ const Card = ({ img, heading, desc }) => {
       <div className="desc-holder">
         <h1>{heading}</h1>
         <p>{desc}</p>
-        <button>pass exam</button>
+        <button>
+          <Link to="/dashboard/exam">pass exam</Link>
+        </button>
       </div>
     </Wrapper>
   );
@@ -15,7 +18,7 @@ const Card = ({ img, heading, desc }) => {
 
 const Wrapper = styled.article`
   background-color: rgb(53, 51, 65);
-  padding: 1.25rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -52,6 +55,10 @@ const Wrapper = styled.article`
       font-size: 16px;
       font-weight: 500;
       color: white;
+      a {
+        color: white;
+        text-decoration: none;
+      }
     }
   }
 `;

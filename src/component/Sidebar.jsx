@@ -4,8 +4,10 @@ import { sideBarContent } from '../Data';
 import { TbLogout2 } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
 import avatar from '../assets/avatar.jpg';
+import { useState } from 'react';
 const Sidebar = () => {
   const { isSideBarOpen, currentUser } = useGlobalContext();
+  const [active, setActive] = useState('Module');
   return (
     <Wrapper className={isSideBarOpen ? '' : 'hide'}>
       <div className="show-border">
@@ -19,7 +21,11 @@ const Sidebar = () => {
         {sideBarContent.map((item) => {
           const { id, name, icon } = item;
           return (
-            <button className={name} key={id}>
+            <button
+              className={active === name ? `${name} active` : name}
+              key={id}
+              onClick={() => setActive(name)}
+            >
               {icon}
               <p>{name}</p>
             </button>
@@ -46,6 +52,26 @@ const Wrapper = styled.aside`
   gap: 1rem;
   padding: 1rem 0;
   border-right: 1px solid #a2a2a753;
+  height: 100%;
+  .active {
+    background-color: #a2a2a753;
+    position: relative;
+    &:before {
+      content: '';
+      width: 2px;
+      height: 109%;
+      background-color: red;
+      position: absolute;
+      right: -3px;
+    }
+    svg {
+      color: white;
+    }
+    p {
+      color: white;
+      font-weight: bold;
+    }
+  }
   .show-border {
     border-bottom: 1px solid #a2a2a753;
   }
