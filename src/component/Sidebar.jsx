@@ -19,24 +19,23 @@ const Sidebar = () => {
           </p>
         </div>
         {sideBarContent.map((item) => {
-          const { id, name, icon } = item;
+          const { id, name, icon, link } = item;
           return (
-            <button
+            <Link
+              to={link}
               className={active === name ? `${name} active` : name}
               key={id}
               onClick={() => setActive(name)}
             >
               {icon}
               <p>{name}</p>
-            </button>
+            </Link>
           );
         })}
       </div>
-      <Link to="/">
-        <button className="log-out">
-          <TbLogout2 />
-          <p>LogOut</p>
-        </button>
+      <Link to="/" className="log-out">
+        <TbLogout2 />
+        <p>LogOut</p>
       </Link>
     </Wrapper>
   );
@@ -75,7 +74,7 @@ const Wrapper = styled.aside`
   .show-border {
     border-bottom: 1px solid #a2a2a753;
   }
-  button {
+  a {
     background-color: transparent;
     outline: none;
     border-color: transparent;
@@ -107,7 +106,7 @@ const Wrapper = styled.aside`
     gap: 1rem;
     border-bottom: 1px solid #a2a2a753;
     img {
-      margin: 1rem 0 1rem 1.5rem;
+      margin: 0 0 1rem 1.5rem;
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -119,6 +118,7 @@ const Wrapper = styled.aside`
       display: flex;
       flex-direction: column;
       a {
+        padding: 0;
         color: white;
         font-size: 10px;
         text-decoration: underline;

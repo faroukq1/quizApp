@@ -4,8 +4,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './pages/Dashboard';
 import Exam from './pages/Exam';
-
+import cardList from './Data';
 const App = () => {
+  console.dir(cardList);
   return (
     <Router>
       <Routes>
