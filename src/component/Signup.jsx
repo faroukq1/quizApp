@@ -10,29 +10,17 @@ const Signup = ({ setCreateAcount }) => {
     useStudentContext();
   const [inscriptionCompleted, setInscriptionCompleted] = useState(false);
   const { setCurrentUser } = useGlobalContext();
-  const saveStudent = () => {
+  const saveStudent = (e) => {
+    e.preventDefault();
     const { firstName, lastName, email, numberOfInscription, password } =
       studentInfos;
-    if (firstName.length === 0) {
-      toast.error('please provide a first name');
-      return;
-    }
-    if (lastName.length === 0) {
-      toast.error('please provide a last name');
-      return;
-    }
-    if (email.length === 0) {
-      toast.error('please provide a email');
-      return;
-    }
-    if (numberOfInscription.length === 0) {
-      toast.error('please provide a number of inscription');
-      return;
-    }
-    if (password.length === 0) {
-      toast.error('please provide a password');
-      return;
-    }
+    if (firstName.length === 0) return toast.error('provide first name');
+    if (lastName.length === 0) return toast.error('provide last name');
+    if (email.length === 0) return toast.error('provide email');
+    if (numberOfInscription.length === 0)
+      return toast.error('provide number of inscription');
+    if (password.length === 0) return toast.error('provide password');
+
     toast.success(`welcom ${firstName} , have a good luck`);
     setStudentList([...studentList, studentInfos]);
     setInscriptionCompleted(true);

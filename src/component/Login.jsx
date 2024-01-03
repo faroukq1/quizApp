@@ -7,35 +7,28 @@ import { useGlobalContext } from '../context/GlobalContext';
 
 const Login = ({ setCreateAcount }) => {
   const [loginInfo, setLoginInfo] = useState({ firstName: '', password: '' });
-  const [active, setactive] = useState(false);
+  const [userExist, setUserExist] = useState(false);
   const { studentList } = useStudentContext();
   const { setCurrentUser } = useGlobalContext();
+
   const checkExistStudent = () => {
     const { firstName, password } = loginInfo;
-    if (firstName.length === 0) {
-      toast.error('please provide a name');
-      return;
-    }
-    if (password.length === 0) {
-      toast.error('please provide a password');
-      return;
-    }
+    if (firstName.length === 0) return toast.error('please provide a name');
+    if (password.length === 0) return toast.error('please provide a password');
     const user = studentList.filter(
       (item) => item.firstName === firstName && item.password === password
     );
     setCurrentUser(firstName);
+    setUserExist(true);
     return user.length > 0;
   };
   return (
     <Wrapper>
-      <h1 className={active ? 'hide' : ''}>Login</h1>
-      <button
-        onClick={() => setCreateAcount(true)}
-        className={active ? 'hide' : 'create-account'}
-      >
+      <h1>Login</h1>
+      <button onClick={() => setCreateAcount(true)} className="create-account">
         You didn't have account?
       </button>
-      <form action="POST" className={active ? 'hide' : ''}>
+      <form action="POST">
         <div className="student-id">
           <label htmlFor="studentId">Student name</label>
           <input
@@ -58,24 +51,19 @@ const Login = ({ setCreateAcount }) => {
         </div>
       </form>
       <div className="submit">
-        <button
-          className="submit-btn"
-          disabled={active}
-          onClick={() => {
-            if (checkExistStudent()) {
-              toast('Welcom to the test platform');
-              setactive(true);
-            }
-          }}
-        >
-          {!active ? 'login' : <Link to="dashboard">go to the platform</Link>}
-        </button>
-        <Link
-          className={active ? 'hide' : 'forget-password'}
-          to="/forgetPassword"
-        >
-          Forget your passowrd?
+        <Link className="submit-btn" to={userExist ? '/dashboard' : '/'}>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              if (checkExistStudent()) {
+                toast('Welcom to the test platform');
+              }
+            }}
+          >
+            go to the platform
+          </button>
         </Link>
+        <Link to="/forgetPassword">Forget your passowrd?</Link>
       </div>
     </Wrapper>
   );
@@ -127,13 +115,17 @@ const Wrapper = styled.div`
     align-items: center;
     gap: 1rem;
     .submit-btn {
-      width: 100%;
-      padding: 0.75rem 0;
-      border-color: transparent;
-      cursor: pointer;
-      background-color: #0073c5;
-      border-radius: 5px;
-      color: white;
+      background-color: #0095ff;
+      padding: 0.75rem 3rem;
+      border-radius: 10px;
+      button {
+        cursor: pointer;
+        background-color: transparent;
+        outline: none;
+        border-color: transparent;
+        color: white;
+        font-weight: 600;
+      }
     }
     .forget-password {
       text-decoration: none;
