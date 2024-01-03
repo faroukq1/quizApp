@@ -4,10 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './pages/Dashboard';
 import Exam from './pages/Exam';
-import { useGlobalContext } from './context/GlobalContext';
 const App = () => {
-  const { exam } = useGlobalContext();
-  console.log(exam);
   return (
     <Router>
       <Routes>
