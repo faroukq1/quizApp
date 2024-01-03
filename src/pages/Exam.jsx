@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Navbar from '../component/Navbar';
 import Sidebar from '../component/Sidebar';
 import Tests from '../component/Tests';
+import { useGlobalContext } from '../context/GlobalContext';
 
 const Exam = () => {
   return (

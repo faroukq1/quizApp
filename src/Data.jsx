@@ -5,6 +5,7 @@ import { TbProgressHelp } from 'react-icons/tb';
 import img1 from './assets/algo.jpeg';
 import img2 from './assets/assembly.jpg';
 import img3 from './assets/oop.jpg';
+
 export const students = [
   {
     firstName: 'farouk',
@@ -48,7 +49,7 @@ export const cardList = [
     heading: 'Algorithm',
     desc: 'Must know algorithm and data structure with sorting algorithm and finally how to calculate complexity and space',
     img: img1,
-    questions: [
+    question: [
       {
         question:
           'Which algorithm sorts elements by repeatedly moving the largest unsorted element to the end?',
@@ -139,7 +140,7 @@ export const cardList = [
     heading: 'Assembly',
     desc: 'Must know how to program with assembly language and how modern language converted to assembly then to machine code',
     img: img2,
-    questions: [
+    question: [
       {
         question: 'What is the primary function of an assembler?',
         answers: [
