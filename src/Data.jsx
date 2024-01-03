@@ -48,7 +48,7 @@ export const cardList = [
     heading: 'Algorithm',
     desc: 'Must know algorithm and data structure with sorting algorithm and finally how to calculate complexity and space',
     img: img1,
-    question: [
+    questions: [
       {
         question:
           'Which algorithm sorts elements by repeatedly moving the largest unsorted element to the end?',
@@ -139,7 +139,7 @@ export const cardList = [
     heading: 'Assembly',
     desc: 'Must know how to program with assembly language and how modern language converted to assembly then to machine code',
     img: img2,
-    question: [
+    questions: [
       {
         question: 'What is the primary function of an assembler?',
         answers: [

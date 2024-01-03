@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Navbar from '../component/Navbar';
 import Sidebar from '../component/Sidebar';
-import Test from '../component/Test';
+import Tests from '../component/Tests';
 
 const Exam = () => {
   return (
@@ -9,7 +9,7 @@ const Exam = () => {
       <Navbar />
       <div className="main">
         <Sidebar />
-        <Test />
+        <Tests />
       </div>
     </Wrapper>
   );

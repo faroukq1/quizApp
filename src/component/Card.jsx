@@ -1,14 +1,20 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useGlobalContext } from '../context/GlobalContext';
 
 const Card = ({ img, heading, desc }) => {
+  const { setCurrentExam } = useGlobalContext();
   return (
     <Wrapper>
       <img src={img} alt="img" />
       <div className="desc-holder">
         <h1>{heading}</h1>
         <p>{desc}</p>
-        <button>
+        <button
+          onClick={() => {
+            setCurrentExam(heading);
+          }}
+        >
           <Link to="/dashboard/exam">pass exam</Link>
         </button>
       </div>

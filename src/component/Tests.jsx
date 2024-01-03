@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { useGlobalContext } from '../context/GlobalContext';
 
-const Test = () => {
+const Tests = ({ currentExam }) => {
   return <Wrapper></Wrapper>;
 };
 
@@ -9,4 +10,4 @@ const Wrapper = styled.article`
   width: 100%;
   background-color: #1c1b25;
 `;
-export default Test;
+export default Tests;

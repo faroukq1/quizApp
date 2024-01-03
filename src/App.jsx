@@ -4,9 +4,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './pages/Dashboard';
 import Exam from './pages/Exam';
-import cardList from './Data';
+import { useGlobalContext } from './context/GlobalContext';
 const App = () => {
-  console.dir(cardList);
+  const { exam } = useGlobalContext();
+  console.log(exam);
   return (
     <Router>
       <Routes>
