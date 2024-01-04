@@ -7,7 +7,6 @@ const Tests = () => {
   const { exam } = useGlobalContext();
   const [currentItem, setCurrentItem] = useState(0);
   const examQestionList = exam[0]?.question || [];
-  console.log(currentItem);
   return (
     <Wrapper>
       {examQestionList.map((exam) => {

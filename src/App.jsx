@@ -4,13 +4,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './pages/Dashboard';
 import Exam from './pages/Exam';
+import Consultation from './pages/Consultation';
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Loginpage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/exam" element={<Exam />} />
+        <Route path="/exam" element={<Exam />} />
+        <Route path="/consultation" element={<Consultation />} />
       </Routes>
       <ToastContainer />
     </Router>

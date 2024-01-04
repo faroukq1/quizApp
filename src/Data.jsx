@@ -20,25 +20,25 @@ export const sideBarContent = [
   {
     id: nanoid(),
     name: 'Module',
-    link: 'dashboard',
+    link: '/dashboard',
     icon: <IoIosBookmarks />,
   },
   {
     id: nanoid(),
-    name: 'Consultation',
-    link: '/dashboard/consultation',
-    icon: <MdBackHand />,
-  },
-  {
-    id: nanoid(),
     name: 'Result',
-    link: '/dashboard/result',
+    link: '/result',
     icon: <TbProgressHelp />,
   },
   {
     id: nanoid(),
+    name: 'Consultation',
+    link: '/consultation',
+    icon: <MdBackHand />,
+  },
+  {
+    id: nanoid(),
     name: 'Help',
-    link: '/dashboard/help',
+    link: '/help',
     icon: <IoIosBookmarks />,
   },
 ];
@@ -316,5 +316,28 @@ export const cardList = [
     ],
   },
 ];
+
+export const emailTemplate = `
+NOTICE : this is an email template you should respect this pattern  when you send it
+Subject: Request for Reassessment of Exam Paper
+Dear [Teacher's Name],
+
+
+
+I hope this email finds you well. I am writing to address concerns I have regarding the recent evaluation of my [Name of the Exam or Assignment] conducted on [Exam Date]. Firstly, I want to express my appreciation for your dedication and time spent assessing our papers.
+After receiving my graded exam, I took the time to review the feedback and marks provided. While I understand the complexity of grading numerous papers, I believe there might have been some misinterpretation or oversight in the evaluation of certain sections/questions. I am writing to respectfully request a reevaluation or recorrection of these specific areas.
+Upon reviewing [mention the section/question numbers or provide detailed examples], I found [briefly explain the discrepancy or your concern with the evaluation, citing specific reasons or references]. I value your expertise and understanding of the subject matter, and I seek your guidance in understanding the assessment criteria applied to my responses.
+Could you kindly consider revisiting the mentioned sections/questions to ensure accuracy in the assessment? Any clarification or additional feedback you can provide would be immensely beneficial for my comprehension and improvement in the subject matter.
+I am willing to provide any further explanations or materials that might assist in the reassessment process. Your guidance in understanding the evaluation criteria would be greatly appreciated and will aid in my academic progress.
+I understand your time is valuable, and I sincerely appreciate your attention to this matter. If possible, I kindly request your prompt consideration of my request for a reevaluation.
+Thank you very much for your understanding and support in addressing this concern. I am eagerly looking forward to your response regarding the possibility of a reassessment.
+Warm regards,
+
+
+
+[Your Name]
+[Your Contact Information]
+[Your Student ID (if applicable)]
+`;
 
 export default cardList;

@@ -15,7 +15,7 @@ const Card = ({ img, heading, desc }) => {
             setCurrentExam(heading);
           }}
         >
-          <Link to="/dashboard/exam">pass exam</Link>
+          <Link to="/exam">pass exam</Link>
         </button>
       </div>
     </Wrapper>
