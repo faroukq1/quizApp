@@ -9,9 +9,9 @@ const Tests = () => {
   const { exam } = useGlobalContext();
   const { studentNotes, setStudentNotes } = useStudentContext();
   const [currentItem, setCurrentItem] = useState(0);
+  const [disbleTest, setDisableTest] = useState(false);
   const examQestionList = exam[0]?.question || [];
   const examName = exam[0]?.heading;
-  console.log(examQestionList);
   const next = () =>
     setCurrentItem((prev) =>
       prev === 0
@@ -52,7 +52,9 @@ const Tests = () => {
                   <div key={index} className="answer">
                     <input
                       type="radio"
+                      disabled={disbleTest}
                       onClick={() => {
+                        setDisableTest(true);
                         index === 1 &&
                           setStudentNotes({
                             ...studentNotes,
@@ -69,8 +71,21 @@ const Tests = () => {
         );
       })}
       <div className="change-btn">
-        <button onClick={next}>Back</button>
-        <button onClick={back}>Next</button>
+        <button onClick={back}>Back</button>
+        <button
+          disabled={!disbleTest}
+          onClick={() => {
+            setStudentNotes({
+              ...studentNotes,
+              [examName]:
+                studentNotes[examName] > 0 ? studentNotes[examName] - 2 : 0,
+            });
+            setDisableTest(false);
+          }}
+        >
+          Edit
+        </button>
+        <button onClick={next}>Next</button>
       </div>
     </Wrapper>
   );
