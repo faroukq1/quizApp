@@ -6,9 +6,9 @@ import Dashboard from './pages/Dashboard';
 import Exam from './pages/Exam';
 import Consultation from './pages/Consultation';
 import { useStudentContext } from './context/StudentContext';
+import Result from './pages/Result';
 const App = () => {
   const { studentNotes } = useStudentContext();
-  console.log(studentNotes);
   return (
     <Router>
       <Routes>
@@ -16,6 +16,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/exam" element={<Exam />} />
         <Route path="/consultation" element={<Consultation />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
       <ToastContainer />
     </Router>
