@@ -54,7 +54,7 @@ const Wrapper = styled.main`
     justify-content: center;
   }
   .hero {
-    background-color: #0095ff;
+    background-color: #1c1b25;
 
     img {
       height: 50%;

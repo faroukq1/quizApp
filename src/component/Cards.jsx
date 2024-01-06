@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import Wrapper from '../Styles/Cards';
 import { cardList } from '../Data';
 import Card from './Card';
 const Cards = () => {
@@ -10,11 +10,5 @@ const Cards = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.article`
-  display: flex;
-  gap: 2rem;
-  padding: 2rem;
-`;
 
 export default Cards;

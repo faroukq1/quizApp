@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import Wrapper from '../Styles/Test';
 import { useGlobalContext } from '../context/GlobalContext';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
@@ -71,8 +71,11 @@ const Tests = () => {
         );
       })}
       <div className="change-btn">
-        <button onClick={back}>Back</button>
+        <button className="back" onClick={back}>
+          Back
+        </button>
         <button
+          className="edit"
           disabled={!disbleTest}
           onClick={() => {
             setStudentNotes({
@@ -85,88 +88,12 @@ const Tests = () => {
         >
           Edit
         </button>
-        <button onClick={next}>Next</button>
+        <button className="next" onClick={next}>
+          Next
+        </button>
       </div>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.article`
-  background-color: #1c1b25;
-  overflow: hidden;
-  transition: 1ms all ease;
-  position: relative;
-  width: 100%;
-  .container {
-    background-color: #4e000032;
-    border-radius: 1rem;
-    padding: 0 10vw;
-    height: 90%;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .question-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    height: 100%;
-    width: 100%;
-    h1 {
-      margin: 0 0 7rem 0;
-      color: white;
-      text-align: center;
-      font-size: 30px;
-    }
-    .question {
-      margin-top: 5rem;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      gap: 3rem;
-      p {
-        color: white;
-        font-weight: bold;
-      }
-    }
-  }
-  .change-btn {
-    position: absolute;
-    bottom: 15%;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    button {
-      padding: 0.5rem 2rem;
-      outline: none;
-      border-color: transparent;
-      background-color: white;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-  }
-  .answer {
-    display: flex;
-    gap: 1rem;
-    input[type='radio'] {
-      width: 20px;
-      outline: none;
-      border: none;
-      color: black;
-    }
-  }
-  .get-test {
-    padding: 1rem 2rem;
-    background-color: white;
-    border-radius: 10px;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 0;
-  }
-`;
 export default Tests;

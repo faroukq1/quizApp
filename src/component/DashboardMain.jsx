@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import Wrapper from '../Styles/DashboardMain';
 import Cards from './Cards';
 
 const DashboardMain = () => {
@@ -8,11 +8,5 @@ const DashboardMain = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.article`
-  height: 100vh;
-  width: 100%;
-  background-color: #1c1b25;
-`;
 
 export default DashboardMain;
