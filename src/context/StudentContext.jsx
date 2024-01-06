@@ -12,9 +12,21 @@ export const StudentProvider = ({ children }) => {
     password: '',
     marks: [],
   });
+  const [studentNotes, setStudentNotes] = useState({
+    Algorithm: 0,
+    Assembly: 0,
+    ObjectOriented: 0,
+  });
   return (
     <StudentContext.Provider
-      value={{ studentList, setStudentList, studentInfos, setStudentInfos }}
+      value={{
+        studentList,
+        setStudentList,
+        studentInfos,
+        setStudentInfos,
+        studentNotes,
+        setStudentNotes,
+      }}
     >
       {children}
     </StudentContext.Provider>
