@@ -35,12 +35,6 @@ export const sideBarContent = [
     link: '/consultation',
     icon: <MdBackHand />,
   },
-  {
-    id: nanoid(),
-    name: 'Help',
-    link: '/help',
-    icon: <IoIosBookmarks />,
-  },
 ];
 
 export const cardList = [
