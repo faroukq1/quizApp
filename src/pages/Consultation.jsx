@@ -1,14 +1,13 @@
-import styled from 'styled-components';
-import Navbar from '../component/Navbar';
-import Sidebar from '../component/Sidebar';
-import { emailTemplate } from '../Data';
-import { useStudentContext } from '../context/StudentContext';
-import { nanoid } from 'nanoid';
+import Wrapper from "../Styles/Consultation";
+import Navbar from "../component/Navbar";
+import Sidebar from "../component/Sidebar";
+import { emailTemplate } from "../Data";
+import { useStudentContext } from "../context/StudentContext";
+import { nanoid } from "nanoid";
 
 const Consultation = () => {
   const { studentInfos } = useStudentContext();
   const { firstName, lastName, email, numberOfInscription } = studentInfos;
-  console.log(studentInfos);
   return (
     <Wrapper>
       <Navbar />
@@ -19,7 +18,7 @@ const Consultation = () => {
             <div>
               <label htmlFor="name">First Name</label>
               <input
-                value={firstName || 'unknown'}
+                value={firstName || "unknown"}
                 readOnly
                 type="text"
                 name="first name"
@@ -27,7 +26,7 @@ const Consultation = () => {
               />
               <label htmlFor="name">Last Name</label>
               <input
-                value={lastName || 'unknown'}
+                value={lastName || "unknown"}
                 readOnly
                 type="text"
                 name="first name"
@@ -35,7 +34,7 @@ const Consultation = () => {
               />
               <label htmlFor="name">Email</label>
               <input
-                value={email || 'unknow@uknown.com'}
+                value={email || "unknow@uknown.com"}
                 readOnly
                 type="Email"
                 name="Email"
@@ -90,83 +89,5 @@ const Consultation = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.main`
-  .textarea {
-    padding: 1rem;
-    background-color: transparent;
-    outline: none;
-  }
-  position: relative;
-  height: 100vh;
-  .main {
-    display: flex;
-    height: 95%;
-  }
-  .consult {
-    background-color: #1c1b25;
-    padding: 5rem;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  form {
-    width: 100%;
-    display: flex;
-    gap: 2rem;
-    > div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      width: 40%;
-
-      label {
-        color: white;
-        margin-bottom: 10px;
-      }
-      input {
-        padding: 1rem 0.5rem;
-        font-weight: bold;
-        color: white;
-        outline: none;
-        border: 1px solid grey;
-        background-color: transparent;
-      }
-      .btn {
-        margin: 2rem 0 0 0;
-        width: 100%;
-        display: flex;
-        gap: 1rem;
-        button {
-          padding: 0.5rem 2rem;
-          outline: none;
-          border: transparent;
-          border-radius: 1rem;
-          font-weight: bold;
-          color: white;
-          cursor: pointer;
-        }
-        .submit {
-          background-color: #00ff73;
-        }
-        .cancel {
-          background-color: #ff0000;
-        }
-      }
-    }
-  }
-  .select {
-    background-color: transparent;
-    padding: 1rem;
-    color: white;
-    option {
-      color: black;
-      background-color: transparent;
-      padding: 1rem;
-    }
-  }
-`;
 
 export default Consultation;
