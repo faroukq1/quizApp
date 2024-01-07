@@ -88,5 +88,12 @@ const Wrapper = styled.article`
     text-decoration: none;
     margin: 0;
   }
+  .res-btn {
+    padding: 0.5rem 2rem;
+    background-color: #365486;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+  }
 `;
 export default Wrapper;

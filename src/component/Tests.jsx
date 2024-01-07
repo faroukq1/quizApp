@@ -45,37 +45,50 @@ const Tests = () => {
             style={{ transform: `translateY(${-currentItem * 100}%)` }}
             key={nanoid()}
           >
-            <div className="container">
-              <h1>{question}</h1>
-              <div className="question">
-                {answers.map((ans, index) => (
-                  <div key={index} className="answer">
-                    <input
-                      type="radio"
-                      disabled={disbleTest}
-                      onClick={() => {
-                        setDisableTest(true);
-                        index === 1 &&
-                          setStudentNotes({
-                            ...studentNotes,
-                            [examName]: studentNotes[examName] + 2,
-                          });
-                      }}
-                    />
-                    <p key={nanoid()}>{ans}</p>
-                  </div>
-                ))}
+            {currentItem !== examQestionList.length - 1 ? (
+              <div className="container">
+                <h1>{question}</h1>
+                <div className="question">
+                  {answers.map((ans, index) => (
+                    <div key={index} className="answer">
+                      <input
+                        type="radio"
+                        disabled={disbleTest}
+                        onClick={() => {
+                          setDisableTest(true);
+                          index === 1 &&
+                            setStudentNotes({
+                              ...studentNotes,
+                              [examName]: studentNotes[examName] + 2,
+                            });
+                        }}
+                      />
+                      <p key={nanoid()}>{ans}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="container">
+                <h1>exam end</h1>
+              </div>
+            )}
           </div>
         );
       })}
       <div className="change-btn">
-        <button className="back" onClick={back}>
-          Back
+        <button
+          className={
+            currentItem === examQestionList.length - 1 ? 'next hidden' : 'back'
+          }
+          onClick={next}
+        >
+          Backk
         </button>
         <button
-          className="edit"
+          className={
+            currentItem === examQestionList.length - 1 ? 'edit hidden' : 'edit'
+          }
           disabled={!disbleTest}
           onClick={() => {
             setStudentNotes({
@@ -88,9 +101,22 @@ const Tests = () => {
         >
           Edit
         </button>
-        <button className="next" onClick={next}>
+        <button
+          className={
+            currentItem === examQestionList.length - 1 ? 'back hidden' : 'next'
+          }
+          onClick={back}
+        >
           Next
         </button>
+        <Link
+          to="/result"
+          className={
+            currentItem === examQestionList.length - 1 ? 'res-btn' : 'hidden'
+          }
+        >
+          Show result
+        </Link>
       </div>
     </Wrapper>
   );
