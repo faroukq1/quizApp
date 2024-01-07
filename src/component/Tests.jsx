@@ -84,7 +84,7 @@ const Tests = () => {
           }
           onClick={next}
         >
-          Backk
+          Back
         </button>
         <button
           className={
@@ -106,17 +106,20 @@ const Tests = () => {
           className={
             currentItem === examQestionList.length - 1 ? 'back hidden' : 'next'
           }
-          onClick={back}
+          onClick={() => {
+            back();
+            setDisableTest(false);
+          }}
         >
           Next
         </button>
         <Link
-          onClick={() =>
+          onClick={() => {
             setFinishedExam({
               ...finishedExam,
               [examName]: true,
-            })
-          }
+            });
+          }}
           to="/result"
           className={
             currentItem === examQestionList.length - 1 ? 'res-btn' : 'hidden'

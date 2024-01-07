@@ -8,6 +8,8 @@ import Consultation from './pages/Consultation';
 import { useStudentContext } from './context/StudentContext';
 import Result from './pages/Result';
 const App = () => {
+  const { studentNotes } = useStudentContext();
+  console.log(studentNotes);
   return (
     <Router>
       <Routes>
