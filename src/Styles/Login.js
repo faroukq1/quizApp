@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  .spiner {
+    transform: translateX(-20%);
+  }
   .hide {
     display: none;
   }
@@ -41,10 +44,6 @@ const Wrapper = styled.div`
   }
   .submit {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
     .submit-btn {
       background-color: #0095ff;
       padding: 0.75rem 3rem;
@@ -62,6 +61,15 @@ const Wrapper = styled.div`
       text-decoration: none;
       color: #c4c4c4;
     }
+  }
+  .plat-form {
+    color: black;
+    background-color: #0095ff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    position: relative;
+    left: 35%;
   }
 `;
 

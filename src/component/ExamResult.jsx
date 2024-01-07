@@ -34,7 +34,7 @@ const ExamResult = () => {
               );
             })}
             <button
-              onClick={() => setQestionNumber((prev) => (prev == 5 ? 9 : 5))}
+              onClick={() => setQestionNumber((prev) => (prev == 5 ? 10 : 5))}
               className="show-ans"
             >
               {questionNumber === 5 ? 'Show answers' : 'Hide answers'}

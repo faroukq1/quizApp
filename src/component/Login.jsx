@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import { useStudentContext } from '../context/StudentContext';
 import { toast } from 'react-toastify';
 import { useGlobalContext } from '../context/GlobalContext';
-
+import spiner from '../assets/spiner.gif';
 const Login = ({ setCreateAcount }) => {
   const [loginInfo, setLoginInfo] = useState({ firstName: '', password: '' });
   const [userExist, setUserExist] = useState(false);
   const { studentList } = useStudentContext();
   const { setCurrentUser } = useGlobalContext();
-
+  const [isLogin, setIsLogin] = useState(false);
   const checkExistStudent = () => {
     const { firstName, password } = loginInfo;
     if (firstName.length === 0) return toast.error('please provide a name');
@@ -22,6 +22,27 @@ const Login = ({ setCreateAcount }) => {
     setUserExist(true);
     return user.length > 0;
   };
+  const countDown = () => {
+    setTimeout(() => {
+      setIsLogin(true);
+    }, 3000);
+  };
+  if (isLogin) {
+    return (
+      <Wrapper>
+        <Link to="/dashboard" className="plat-form">
+          go to the platform
+        </Link>
+      </Wrapper>
+    );
+  }
+  if (userExist) {
+    return (
+      <Wrapper>
+        <img className="spiner" src={spiner} alt="spiner" />
+      </Wrapper>
+    );
+  }
   return (
     <Wrapper>
       <h1>Login</h1>
@@ -42,7 +63,7 @@ const Login = ({ setCreateAcount }) => {
         <div className="student-pass">
           <label htmlFor="password">password</label>
           <input
-            type="passsword"
+            type="password"
             name="password"
             onChange={(e) =>
               setLoginInfo({ ...loginInfo, password: e.target.value })
@@ -55,12 +76,13 @@ const Login = ({ setCreateAcount }) => {
           <button
             onClick={(e) => {
               e.preventDefault();
+              countDown();
               if (checkExistStudent()) {
                 toast('Welcom to the test platform');
               }
             }}
           >
-            go to the platform
+            Login
           </button>
         </Link>
         <Link to="/forgetPassword">Forget your passowrd?</Link>
