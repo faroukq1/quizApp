@@ -1,9 +1,9 @@
-import Wrapper from '../Styles/Signup';
-import { useStudentContext } from '../context/StudentContext';
-import { toast } from 'react-toastify';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useGlobalContext } from '../context/GlobalContext';
+import Wrapper from "../Styles/Signup";
+import { useStudentContext } from "../context/StudentContext";
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context/GlobalContext";
 
 const Signup = ({ setCreateAcount }) => {
   const { studentList, setStudentList, studentInfos, setStudentInfos } =
@@ -14,12 +14,12 @@ const Signup = ({ setCreateAcount }) => {
     e.preventDefault();
     const { firstName, lastName, email, numberOfInscription, password } =
       studentInfos;
-    if (firstName.length === 0) return toast.error('provide first name');
-    if (lastName.length === 0) return toast.error('provide last name');
-    if (email.length === 0) return toast.error('provide email');
+    if (firstName.length === 0) return toast.error("provide first name");
+    if (lastName.length === 0) return toast.error("provide last name");
+    if (email.length === 0) return toast.error("provide email");
     if (numberOfInscription.length === 0)
-      return toast.error('provide number of inscription');
-    if (password.length === 0) return toast.error('provide password');
+      return toast.error("provide number of inscription");
+    if (password.length === 0) return toast.error("provide password");
 
     toast.success(`welcom ${firstName} , have a good luck`);
     setStudentList([...studentList, studentInfos]);
@@ -89,7 +89,7 @@ const Signup = ({ setCreateAcount }) => {
         <div className="student-pass">
           <label htmlFor="password">passowrd</label>
           <input
-            type="text"
+            type="password"
             name="password"
             onChange={(e) => {
               setStudentInfos({ ...studentInfos, password: e.target.value });
