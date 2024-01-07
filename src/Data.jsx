@@ -301,6 +301,172 @@ export const cardList = [
   },
 ];
 
+export const answers = [
+  {
+    id: nanoid(),
+    heading: 'Algorithm',
+    img: img1,
+    question: [
+      {
+        question:
+          'Which algorithm sorts elements by repeatedly moving the largest unsorted element to the end?',
+        answers: 'Merge Sort',
+      },
+      {
+        question:
+          'What data structure does a FIFO (First-In-First-Out) principle define?',
+        answers: 'Heap',
+      },
+      {
+        question:
+          'What is the time complexity of the Bubble Sort algorithm in the worst-case scenario for an array of length (n)?',
+        answers: 'O(n log n)',
+      },
+      {
+        question:
+          'Which algorithm is used to find the shortest path in a weighted graph from a single source vertex to all other vertices?',
+        answers: 'Breadth-First Search (BFS)',
+      },
+      {
+        question:
+          'Which data structure uses LIFO (Last-In-First-Out) ordering?',
+        answers: 'Heap',
+      },
+      {
+        question: 'What does the acronym "DFS" stand for in computer science?',
+        answers: 'Directed File System',
+      },
+      {
+        question:
+          'Which algorithm works by repeatedly dividing the list in half and discarding the half that doesn’t contain the target value?',
+        answers: 'Binary Search',
+      },
+      {
+        question:
+          'Which algorithm uses recursion to solve problems by breaking them down into smaller, simpler subproblems?',
+        answers: 'Insertion Sort',
+      },
+      {
+        question:
+          'What is the primary advantage of using dynamic programming in algorithm design?',
+        answers: 'It guarantees the fastest execution time',
+      },
+      {
+        question: 'What is the purpose of an algorithm?',
+        answers: 'To describe a sequence of steps to solve a problem',
+      },
+    ],
+  },
+  {
+    id: nanoid(),
+    heading: 'Assembly',
+    img: img2,
+    question: [
+      {
+        question: 'What is the primary function of an assembler?',
+        answers: 'Execute assembly code directly',
+      },
+      {
+        question:
+          'Which component translates assembly language instructions into machine code?',
+        answers: 'Compiler',
+      },
+      {
+        question:
+          'What does the acronym "CPU" stand for in computer architecture?',
+        answers: 'Computer Processing Unit',
+      },
+      {
+        question:
+          'Which register is commonly used as an accumulator in x86 assembly language?',
+        answers: 'BX',
+      },
+      {
+        question:
+          'Which addressing mode directly specifies the operand value in the instruction?',
+        answers: 'Direct',
+      },
+      {
+        question:
+          'What is the purpose of the instruction pointer (IP) register?',
+        answers: 'Stores the result of arithmetic operations',
+      },
+      {
+        question:
+          'Which command is used to move data between registers in assembly language?',
+        answers: 'MOV',
+      },
+      {
+        question: 'Which directive reserves memory space in assembly language?',
+        answers: '.space',
+      },
+      {
+        question: 'In x86 assembly, what does the "HLT" instruction do?',
+        answers: 'Halts the processor permanently',
+      },
+      {
+        question:
+          'Which of the following represents a comment in assembly language?',
+        answers: '# Comment',
+      },
+    ],
+  },
+  {
+    id: nanoid(),
+    heading: 'ObjectOriented',
+    img: img3,
+    question: [
+      {
+        question: 'What is the primary goal of encapsulation in OOP?',
+        answers: 'To combine data and methods into a single unit',
+      },
+      {
+        question:
+          'Which OOP principle promotes code reusability by allowing a class to inherit properties and behavior from another class?',
+        answers: 'Polymorphism',
+      },
+      {
+        question:
+          'What is the term used to describe a blueprint or template that defines the properties and behaviors of objects?',
+        answers: 'Method',
+      },
+      {
+        question: 'In OOP, what does the term "polymorphism" refer to?',
+        answers: 'Ability to use a single interface for different data types',
+      },
+      {
+        question:
+          'Which OOP concept emphasizes the ability of a class to have multiple methods with the same name but different implementations?',
+        answers: 'Inheritance',
+      },
+      {
+        question:
+          'What is the process of creating an object from a class called in OOP?',
+        answers: 'Inheritance',
+      },
+      {
+        question: 'In OOP, what does the term "inheritance" signify?',
+        answers: 'Process of reusing code from one class in another',
+      },
+      {
+        question:
+          'Which OOP principle focuses on providing a simple interface to interact with complex systems?',
+        answers: 'Abstraction',
+      },
+      {
+        question:
+          'What is the term used to describe the ability of an object to take on multiple forms?',
+        answers: 'Polymorphism',
+      },
+      {
+        question:
+          'Which OOP concept refers to the ability to restrict access to certain components within a program?',
+        answers: 'Encapsulation',
+      },
+    ],
+  },
+];
+
 export const emailTemplate = `
 NOTICE : this is an email template you should respect this pattern  when you send it
 Subject: Request for Reassessment of Exam Paper

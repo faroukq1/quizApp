@@ -17,6 +17,11 @@ export const StudentProvider = ({ children }) => {
     Assembly: 0,
     ObjectOriented: 0,
   });
+  const [finishedExam, setFinishedExam] = useState({
+    Algorithm: false,
+    Assembly: false,
+    ObjectOriented: false,
+  });
   return (
     <StudentContext.Provider
       value={{
@@ -26,6 +31,8 @@ export const StudentProvider = ({ children }) => {
         setStudentInfos,
         studentNotes,
         setStudentNotes,
+        finishedExam,
+        setFinishedExam,
       }}
     >
       {children}

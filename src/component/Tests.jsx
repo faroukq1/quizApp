@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 
 const Tests = () => {
   const { exam } = useGlobalContext();
-  const { studentNotes, setStudentNotes } = useStudentContext();
+  const { studentNotes, setStudentNotes, finishedExam, setFinishedExam } =
+    useStudentContext();
   const [currentItem, setCurrentItem] = useState(0);
   const [disbleTest, setDisableTest] = useState(false);
   const examQestionList = exam[0]?.question || [];
@@ -110,6 +111,12 @@ const Tests = () => {
           Next
         </button>
         <Link
+          onClick={() =>
+            setFinishedExam({
+              ...finishedExam,
+              [examName]: true,
+            })
+          }
           to="/result"
           className={
             currentItem === examQestionList.length - 1 ? 'res-btn' : 'hidden'
